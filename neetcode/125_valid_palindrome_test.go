@@ -11,7 +11,10 @@ func Test_isPalindrome(t *testing.T) {
 		args args
 		want bool
 	}{
-		{name: "test1", args: args{s: `unique 34 )) string`}, want: true},
+		{name: "test1", args: args{s: `unique 34 )) string`}, want: false},
+		{name: "test2", args: args{s: `A man, a plan, a canal: Panama`}, want: true},
+		{name: "test3", args: args{s: `race a car`}, want: false},
+		{name: "test4", args: args{s: ` `}, want: true},
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
